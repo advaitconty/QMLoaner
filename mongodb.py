@@ -296,6 +296,62 @@ def add_guitar(client):
     print("Successfully inserted!")
     print("Thank you for using SPSGE App!")
     exit(0)
+
+def remove_guitar(client):
+    colorama.init()
+    db = client["inventory"]
+    collection = db["inventory"]
+
+    documents = list(collection.find())
+
+    table = PrettyTable(["S/N", "Code", "Brand", "Allocation",
+                         "Level", "BC", "MOE Code", "Remarks", "Rented"])
+
+    available_num = []
+
+    for document in documents:
+        rows = []
+        for key in document:
+            if key != "_id":
+                if str(document[key]) != "nan" and key != "S/N":
+                    if document["RENTED"] == "T" and key == "RENTED":
+                        rows.append(colorama.Fore.LIGHTRED_EX + "Not available for rent" + colorama.Style.RESET_ALL)
+                    elif document["RENTED"] == "F" and key == "RENTED":
+                        rows.append(colorama.Fore.LIGHTGREEN_EX + "Available for rent" + colorama.Style.RESET_ALL)
+                    else:
+                        rows.append(document[key])
+                elif key == "S/N":
+                    rows.append(str(document[key]))
+                    available_num.append(str(document[key]))
+                else:
+                    rows.append("-")
+
+        table.add_row(rows)
+
+    print(table)
+
+    print(colorama.Back.LIGHTBLACK_EX +
+          "\x1B[3mAll data available on the guitars has been shown.\x1B[0m")
+
+    while True:
+        index = input("Please enter the index of the guitar to remove: ")
+        if index not in available_num:
+            print("Invalid input entered. Please try again.")
+        else:
+            break
+
+    query = {"S/N": int(index)}
+    try:
+        result = collection.delete_one(query)
+        if result.deleted_count < 1:
+            raise Exception("Failed to delete")
+    except Exception as e:
+        print("We have run into an issue")
+        print(e)
+
+    print("Thank you for using SPSGE App!")
+    exit(0)
+
 def qm_mode(username, password):
     client = MongoClient(secrets.mongo_host_connection(username, password),tlsCAFile=certifi.where())
 
@@ -395,7 +451,7 @@ def qm_mode(username, password):
             elif action == "3":
                 add_guitar(client)
             elif action == "4":
-                print("Sorry for the inconvenience caused. This feature is not currently available yet. Coming soon!")
+                remove_guitar(client)
             elif action == "5":
                 view_guitars(username, reset=True)
             elif action == "6":
