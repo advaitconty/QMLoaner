@@ -31,6 +31,7 @@ def create_loan_pdf(guitar_model, email, name, clas, serial_num):
 
     # Calculate scaling factors (maintain aspect ratio)
     horizontal_scaling_factor = line_width / image_width
+
     vertical_scaling_factor = line_height / image_height
     scaling_factor = min(horizontal_scaling_factor, vertical_scaling_factor)
 
@@ -335,7 +336,7 @@ def create_loa_pdf(name, date, reason):
     body = f"Dear Teachers/Attendance Takers, this is to inform you that student {name.upper()} is not coming for CCA on {date} due to {reason}. This is an automated email, please do not reply to this email"
 
     send_email(f"Leave-Of-Absence for {name.upper()}", body,
-               secrets.ATTENDANCE_EMAILS,
+               ["advait_contractor@outlook.sg"],
                f"LEAVE_OF_ABSENCE_{name.upper()}.pdf")
 
     os.remove(f"LEAVE_OF_ABSENCE_{name.upper()}.pdf")

@@ -9,6 +9,7 @@ import secrets
 from prettytable import PrettyTable
 import colorama
 import emails
+import certifi
 
 
 def log_exception_to_file(file_name, exception):
@@ -20,7 +21,7 @@ def log_exception_to_file(file_name, exception):
 
 def reserve_guitar(sn, name, reset=False):
     colorama.init()
-    client = MongoClient(secrets.mongo_host_connection("user", "blank", True))
+    client = MongoClient(secrets.mongo_host_connection("user", "blank", True),tlsCAFile=certifi.where())
     db = client["inventory"]
     collection = db["inventory"]
 
@@ -101,7 +102,7 @@ def reserve_guitar(sn, name, reset=False):
 
 def view_guitars(name, reset=False):
     colorama.init()
-    client = MongoClient(secrets.mongo_host_connection("user", "blank", True))
+    client = MongoClient(secrets.mongo_host_connection("user", "blank", True),tlsCAFile=certifi.where())
     db = client["inventory"]
     collection = db["inventory"]
 
@@ -180,7 +181,7 @@ def view_guitars(name, reset=False):
 
 def login(username, password):
     try:
-        client = MongoClient(secrets.mongo_host_connection(username, password))
+        client = MongoClient(secrets.mongo_host_connection(username, password),tlsCAFile=certifi.where())
         client.admin.command('ping')
         client.close()
         return True
@@ -212,9 +213,91 @@ def is_plain_text_no_spaces_or_special_chars(s):
     # Use re.match to check if the entire string matches the pattern
     return re.match(pattern, s) is not None
 
+def add_guitar(client):
+    db = client["inventory"]
+    collection = db["inventory"]
 
+    documents = list(collection.find())
+
+    # table = PrettyTable(["S/N", "Code", "Brand", "Allocation",
+    #                      "Level", "BC", "MOE Code", "Remarks", "Rented"])
+
+    largest_sn = 0
+
+    for document in documents:
+        rows = []
+        for key in document:
+            if key == "S/N":
+                if largest_sn < int(document["S/N"]):
+                    largest_sn = int(document["S/N"])
+
+    new_guitar = {"S/N": largest_sn + 1}
+
+    while True:
+        code = input("Please enter the code of the guitar: ")
+        if code == "":
+            print("Invalid input entered. Please try again.")
+        else:
+            break
+
+    new_guitar["Code"] = code
+
+    while True:
+        brand = input("Please enter the brand of the guitar: ")
+        if brand == "":
+            print("Invalid input entered. Please try again.")
+        else:
+            break
+
+    new_guitar["Brand"] = brand
+    new_guitar["Allocation"] = "-"
+    new_guitar["Level"] = "-"
+
+    while True:
+        bc = input("Please enter the BC: ")
+        if bc.upper() == "Y" or bc.upper() == "N":
+            break
+        else:
+            print("Invalid input entered. Please try again. BC should be Y or N.")
+
+    new_guitar["BC"] = bc
+
+    pattern = re.compile(r'^[A-Z][a-z]{11}$')
+
+    while True:
+        moe = input("Please enter the MOE code (enter dash for no MOE code): ")
+        if bool(pattern.match(moe.upper())):
+            break
+        elif moe == "-":
+            print("Leaving MOE Code blank...")
+            moe = "-"
+            break
+        else:
+            print("Invalid input. Please try again.")
+
+    if moe != None:
+        new_guitar["MOE CODE"] = moe.upper()
+    else:
+        new_guitar["MOE CODE"] = "-"
+
+    while True:
+        remarks = input("Any remarks (press enter without pressing anything for blank remarks): ")
+        if remarks == "":
+            print("Leaving remarks blank...")
+            remarks = "-"
+            break
+        else:
+            break
+
+    new_guitar["REMARKS"] = remarks
+    new_guitar["RENTED"] = "F"
+
+    collection.insert_one(new_guitar)
+    print("Successfully inserted!")
+    print("Thank you for using SPSGE App!")
+    exit(0)
 def qm_mode(username, password):
-    client = MongoClient(secrets.mongo_host_connection(username, password))
+    client = MongoClient(secrets.mongo_host_connection(username, password),tlsCAFile=certifi.where())
 
     print("Hello QM!")
     while True:
@@ -229,7 +312,7 @@ def qm_mode(username, password):
         action = input("What would you like to do: ")
 
         try:
-            if int(action) < 1 or int(action) > 5:
+            if int(action) < 1 or int(action) > 6:
                 print("Invalid input. Please try again")
 
             if action == "1":
@@ -310,17 +393,18 @@ def qm_mode(username, password):
                 #
                 #
             elif action == "3":
-                print("Sorry for the inconvenience caused. This feature is not currently available yet. Coming soon!")
-                # Coming sooon
+                add_guitar(client)
             elif action == "4":
                 print("Sorry for the inconvenience caused. This feature is not currently available yet. Coming soon!")
             elif action == "5":
                 view_guitars(username, reset=True)
             elif action == "6":
+                print("Thank you for using SPSGE App!")
                 exit(0)
         except Exception as e:
             print(e)
             print("Invalid input. Please try again")
+
 
 
 if __name__ == "__main__":

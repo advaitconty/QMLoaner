@@ -1,0 +1,65 @@
+bad auth : Authentication failed., full error: {'ok': 0, 'errmsg': 'bad auth : Authentication failed.', 'code': 8000, 'codeName': 'AtlasError'}
+Traceback (most recent call last):
+  File "/Users/mcontrac/Desktop/computing/QMLoaner/mongodb.py", line 185, in login
+    client.admin.command('ping')
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/database.py", line 893, in command
+    with self.__client._conn_for_reads(read_preference, session, operation=command_name) as (
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/mongo_client.py", line 1351, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/mongo_client.py", line 1260, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/pool.py", line 1763, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/pool.py", line 1921, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/pool.py", line 1725, in connect
+    conn.authenticate()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/pool.py", line 1098, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/auth.py", line 656, in authenticate
+    auth_func(credentials, conn)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/auth.py", line 560, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/auth.py", line 299, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/helpers.py", line 342, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/pool.py", line 988, in command
+    return command(
+           ^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/network.py", line 212, in command
+    helpers._check_command_response(
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/helpers.py", line 248, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: bad auth : Authentication failed., full error: {'ok': 0, 'errmsg': 'bad auth : Authentication failed.', 'code': 8000, 'codeName': 'AtlasError'}
+The empty string is not valid username.
+Traceback (most recent call last):
+  File "/Users/mcontrac/Desktop/computing/QMLoaner/mongodb.py", line 184, in login
+    client = MongoClient(secrets.mongo_host_connection(username, password),tlsCAFile=certifi.where())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/mongo_client.py", line 774, in __init__
+    res = uri_parser.parse_uri(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/uri_parser.py", line 523, in parse_uri
+    user, passwd = parse_userinfo(userinfo)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pymongo/uri_parser.py", line 91, in parse_userinfo
+    raise InvalidURI("The empty string is not valid username.")
+pymongo.errors.InvalidURI: The empty string is not valid username.

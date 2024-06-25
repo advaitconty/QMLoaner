@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c83efbf4-d902-416e-80e1-9c6f64b5f064" name="Changes" comment="Added READ">
+      <change afterPath="$PROJECT_DIR$/mongo_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OPERATION MANUAL.odt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdfs.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdfs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secrets.py" beforeDir="false" afterPath="$PROJECT_DIR$/secrets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,12 +51,13 @@
     &quot;Python.secrets.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/milind/PycharmProjects/QuarterMasterLoanSystemUpdated/Name Extractor&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mcontrac/Desktop/computing/QMLoaner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -146,6 +147,9 @@
       <workItem from="1718876942825" duration="3712000" />
       <workItem from="1718882865556" duration="2673000" />
       <workItem from="1718931219314" duration="3510000" />
+      <workItem from="1719114916395" duration="2276000" />
+      <workItem from="1719152636681" duration="315000" />
+      <workItem from="1719280781913" duration="3193000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit, this is the one to show">
       <option name="closed" value="true" />
@@ -191,11 +195,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed nan issue" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$main.coverage" NAME="main Coverage Results" MODIFIED="1718725806583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$Main_script.coverage" NAME="Main script Coverage Results" MODIFIED="1718884709093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$pdfs.coverage" NAME="pdfs Coverage Results" MODIFIED="1718282860758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$mongodb.coverage" NAME="mongodb Coverage Results" MODIFIED="1718884701918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QMLoaner$Main_script.coverage" NAME="Main script Coverage Results" MODIFIED="1719117516874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$secrets.coverage" NAME="secrets Coverage Results" MODIFIED="1718278604173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$mongodb.coverage" NAME="mongodb Coverage Results" MODIFIED="1718884701918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$main.coverage" NAME="main Coverage Results" MODIFIED="1718725806583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/QuarterMasterLoanSystemUpdated$names_extractor.coverage" NAME="names_extractor Coverage Results" MODIFIED="1718279575315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Name Extractor" />
   </component>
 </project>
