@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-import secrets
+import secret as secrets
 
 
 def generate_gemini_response(prompt):
