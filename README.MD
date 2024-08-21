@@ -17,11 +17,11 @@
     - Getting a PDF that you can sign and give on collection of the guitar (with handling directions as a bonus through Google Gemini!)
 
 ## Screenshots
-[Loan table]("Loan table.png")
+![Loan table](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Table.png)
 
-[Email and form auto-generated]("Generated Email and Form.png")
+![Email and form auto-generated](https://github.com/contyadvait/QMLoaner/blob/master/Generated%20Email%20and%20Form.png)
 
-_Check `Loan Form Sample.pdf` for an example of how the loan form looks like_
+_Check ![`Loan Form Sample.pdf`](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Form%20Sample.pdf) for an example of how the loan form looks like_
 - Cleaning and storage instructions generated with Google Gemini
 
 ---
