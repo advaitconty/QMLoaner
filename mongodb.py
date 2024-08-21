@@ -5,7 +5,7 @@ import traceback
 from datetime import datetime
 import re
 import pdfs
-import secrets
+import secret as secrets
 from prettytable import PrettyTable
 import colorama
 import emails
