@@ -17,6 +17,12 @@
     - Getting a PDF that you can sign and give on collection of the guitar (with handling directions as a bonus through Google Gemini!)
 
 ## Screenshots
+[Loan table]("Loan table.png")
+
+[Email and form auto-generated]("Generated Email and Form.png")
+
+_Check `Loan Form Sample.pdf` for an example of how the loan form looks like_
+- Cleaning and storage instructions generated with Google Gemini
 
 ---
 ## Requirements before using for your own club
