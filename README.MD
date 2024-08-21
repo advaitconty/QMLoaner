@@ -1,10 +1,27 @@
 # Quarter Master Loaner System
 - A QM loaning system for the St. Pat's Guitar Ensemble.
 - Created with [Advait Contractor (Coder)](mailto:advait@contractor.net) and [Ryan Lim (Designer)](mailto:ryanlim2009@gmail.com)
-- Part of a project of coding for the better
+## My beliefs of creating for the better
+- Code should be used to help communities out
+- This was made as a demonstration on how we do that
+## Why does this exist?
+- Our school guitar co-curricular activity (CCA) loans out guitars to everyone within the CCA
+- This app makes loaning guitars easier
+- The current system invloves
+    - Checking an excel spreadsheet
+    - Going to an CCA Leader (known as a Quarter master)
+    - Asking them for a loan form
+- This system automates this through:
+    - Going on here
+    - Selecting an available guitar
+    - Getting a PDF that you can sign and give on collection of the guitar (with handling directions as a bonus through Google Gemini!)
 
+## Screenshots
+
+---
 ## Requirements before using for your own club
-1. Prepare these variables
+1. Start by running installing requirements in requirements.txt through `pip install -r requirements.txt`
+2. Prepare these variables
     - `GEMINI_API_KEY`: Please create this variable that contains your Gemini API Key from the [Google AI Studio](https://ai.google.dev/aistudio)
     - `ATTENDANCE_EMAILS`: A list of emails that when people use the app to inform others, an email will be sent to these people 
     -  `LOAN_EMAILS`: A list of people that will be informed when a guitar is loaned. Can be left blank
