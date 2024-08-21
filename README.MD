@@ -17,9 +17,9 @@
     - Getting a PDF that you can sign and give on collection of the guitar (with handling directions as a bonus through Google Gemini!)
 
 ## Screenshots
-![Loan table](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Table.png)
+![Loan table](https://cloud-7r6fpad9m-hack-club-bot.vercel.app/0loan_table.png)
 
-![Email and form auto-generated](https://github.com/contyadvait/QMLoaner/blob/master/Generated%20Email%20and%20Form.png)
+![Email and form auto-generated](https://cloud-gwda8ooks-hack-club-bot.vercel.app/0generated_email_and_form.png)
 
 _Check [`Loan Form Sample.pdf`](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Form%20Sample.pdf) for an example of how the loan form looks like_
 - Cleaning and storage instructions generated with Google Gemini
