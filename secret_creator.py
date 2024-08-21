@@ -56,4 +56,24 @@ with open("secret.py", "w") as f:
         else:
             f.write(f'"{name}"')
 
-    f.write("]")
+    f.write("]\n")
+
+    
+    while True:
+        club_email = input("Enter your club email: ")
+        if verify_email(club_email):
+            break
+        else:
+            print("error!")
+            print("invalid email!")
+
+    club_password = input("Enter your club email's password: ")
+    f.write(f"EMAIL_ID = {club_email}\n")
+    f.write(f"EMAIL_PASSWORD = {club_password}\n")
+
+    smtp_server = input("What is your club emails' SMTP Server address: ")
+    smtp_port = input("What is it's SMTP port: ")
+    f.write(f"SMTP_SERVER = {smtp_server}\n")
+    f.write(f"SMTP_PORT = {smtp_port}")
+
+    print("Setup complete!")
