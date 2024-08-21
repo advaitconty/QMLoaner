@@ -8,8 +8,8 @@ import secret as secrets
 
 def send_email(subject, body, to_emails, attachment_path, attach=True):
     # SMTP server configuration for outlook/hotmail
-    smtp_server = 'smtp-mail.outlook.com'
-    smtp_port = 587
+    smtp_server = secrets.SMTP_SERVER
+    smtp_port = secrets.SMTP_PORT
     sender_email = secrets.EMAIL_ID
     sender_password = secrets.EMAIL_PASSWORD
 
