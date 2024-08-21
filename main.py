@@ -4,7 +4,7 @@ import hashlib
 from getpass import getpass
 import mongodb
 from pdfs import create_loa_pdf, create_loan_pdf
-import secrets
+import secret as secrets
 
 username = ""
 password = ""
