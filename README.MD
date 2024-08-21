@@ -21,7 +21,7 @@
 
 ![Email and form auto-generated](https://github.com/contyadvait/QMLoaner/blob/master/Generated%20Email%20and%20Form.png)
 
-_Check ![`Loan Form Sample.pdf`](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Form%20Sample.pdf) for an example of how the loan form looks like_
+_Check [`Loan Form Sample.pdf`](https://github.com/contyadvait/QMLoaner/blob/master/Loan%20Form%20Sample.pdf) for an example of how the loan form looks like_
 - Cleaning and storage instructions generated with Google Gemini
 
 ---
