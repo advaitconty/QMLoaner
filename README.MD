@@ -1,4 +1,5 @@
 # Quarter Master Loaner System
+- New GUI-based edition GitHub: [QMLoanerGUI](https://github.com/contyadvait/QMLoanerGUI)
 - A QM loaning system for the St. Pat's Guitar Ensemble.
 - Created with [Advait Contractor (Coder)](mailto:advait@contractor.net) and [Ryan Lim (Designer)](mailto:ryanlim2009@gmail.com)
 ## My beliefs of creating for the better
